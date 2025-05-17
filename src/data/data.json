@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+    "id": 1,
+    "image": "../assets/first.png",
+    "title": "Jacket",
+    "price": 49.99
+  },
+    {
+      "id": 2,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/qichhw3wrc1oekbxzudib.png",
+      "title": "Cap",
+      "price": 39.99
+    },
+    {
+      "id": 3,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/yy2498s8ucsxymaxsjzcf.png",
+      "title": "Acrylic Sweater",
+      "price": 29.99
+    },
+    {
+      "id": 4,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/sm8f1ubnfjennk9qbjsm4.png",
+      "title": "Winter Coat",
+      "price": 59.99
+    },
+    {
+      "id": 5,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/cveaf135d9wszids6gtd6.png",
+      "title": "Winter Shirts",
+      "price": 149.99
+    },
+    {
+      "id": 6,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567613/cwlk21f74nd91amr1zkh.png",
+      "title": "Shirts With Jacket",
+      "price": 79.99
+    },
+    {
+      "id": 7,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567613/cwlk21f74nd91amr1zkh.png",
+      "title": "Winter Jacket",
+      "price": 69.99
+    },
+    {
+      "id": 8,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/qichhw3wrc1oekbxzudib.png",
+      "title": "Blue Jeans",
+      "price": 49.99
+    },
+    {
+      "id": 9,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/yy2498s8ucsxymaxsjzcf.png",
+      "title": "Cool Sweater",
+      "price": 29.99
+    },
+    {
+      "id": 10,
+      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/sm8f1ubnfjennk9qbjsm4.png",
+      "title": "Park",
+      "price": 59.99
+    }
+  ]
+}
