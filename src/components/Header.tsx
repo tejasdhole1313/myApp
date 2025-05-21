@@ -1,14 +1,36 @@
+import { useNavigation, NavigationProp } from '@react-navigation/core';
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
-function Header() {
+type RootStackParamList = {
+  Home_Stack: undefined;
+  // add other routes here if needed
+};
+
+type HeaderProps = {
+  isCart: boolean;
+};
+
+function Header({isCart}: HeaderProps) {
+ const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
    <View style={styles.container}>
-    <View style={styles.appIconContainer}>
-      <Image source={require("../assets/apps.png")} 
+    <TouchableOpacity onPress={() => navigation.navigate("Home_Stack")} style={styles.appIconContainer}>
+      {
+        isCart? (<Ionicons name={"chevron-back"} color={"#E96E6E"}  size={24}/>
+        ):(
+          <Image source={require("../assets/apps.png")} 
       style={styles.appIcon}
       />
-    </View>
+        )
+      }
+      
+    </TouchableOpacity>
+    {
+      isCart && <Text  style={styles.myCart}>My Cart</Text>
+    }
+    
     <Image source={require("../assets/profile.png")}
     style={styles.dp}
     />
@@ -22,6 +44,7 @@ const styles = StyleSheet.create({
 flexDirection:"row",
 justifyContent:"space-between",
 alignItems:"center",
+paddingBottom:5,
   },
   appIconContainer:{
   backgroundColor:"#FFFFFF",
@@ -40,4 +63,9 @@ alignItems:"center",
     width:44,
     borderRadius:22,
   },
+  myCart:{
+    fontSize:28,
+    color:"black",
+
+  }
 })

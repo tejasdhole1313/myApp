@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation, NavigationProp } from '@react-navigation/core';
 import React, { useState } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import AntDesign from "react-native-vector-icons/AntDesign";
@@ -13,21 +13,24 @@ interface ProductCartProps {
   };
 }
 
+type RootStackParamList = {
+  PRODUCT_DETAILS: undefined;
+  // add other routes here if needed
+};
+
 function ProductCart({ item }: ProductCartProps) {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [isLiked, setIsLiked] = useState(false);
 
   const toggleLike = () => {
     setIsLiked(!isLiked);
   };
- const navigation = useNavigation<any>();
+
   return (
     <TouchableOpacity  onPress={()=> {
       navigation.navigate("PRODUCT_DETAILS")
     }} style={styles.container}>
-   <Image 
-  source={{ uri: item.image }}  // Wrapped in { uri: ... } for ImageSourcePropType
-  style={styles.coverImage}
-/>
+  <Image source={{ uri: item.image }} style={styles.coverImage} />
 
       <View>
         <Text style={styles.title}>{item.title}</Text>

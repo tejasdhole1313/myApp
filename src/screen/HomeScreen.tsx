@@ -7,17 +7,17 @@ import Header from '../components/Header';
 import Fontisto from "react-native-vector-icons/Fontisto";
 import Category from '../components/Category';
 import ProductCart from '../components/ProductCart';
-import Data from '../data/data.json'
+import data from '../data/data.json'
 
 
 const categories = ["Trending Now", "All", "New", "Mens", "Womens"];
 const HomeScreen = ({}) => {
-  const [products, setProducts] = useState(Data.products);
+  const [products, setProducts] = useState(data.products);
   const [selectedCategory, setSelectedCategory] = useState("Mens");
   const [isLiked, setIsLiked] = useState(false);
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
-      <Header />
+      <Header isCart={false} />
 
    <FlatList
   numColumns={2}
@@ -51,7 +51,11 @@ data={products}
     <ProductCart item={item}  />
   )}
 
-  showsVerticalScrollIndicator={false} />
+  showsVerticalScrollIndicator={false}
+  contentContainerStyle={{
+    paddingBottom:150,
+  }}
+  />
 
 
     </LinearGradient>
@@ -64,7 +68,7 @@ export default HomeScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 10,
   },
   matchText: {
     fontSize: 28,

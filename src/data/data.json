@@ -1,64 +1,85 @@
 {
   "products": [
-    {
+  {
     "id": 1,
-    "image": "../assets/first.png",
-    "title": "Jacket",
+    "image": "https://t4.ftcdn.net/jpg/02/98/73/27/360_F_298732797_ayt6MgF0tTgXRCnLxqXaURS6ZCWztvRJ.jpg",
+    "title": "Slim Fit Shirt",
+    "brand": "Zara",
+    "gender": "Men",
+    "price": 39.99
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1585155777730-486b44d4e694",
+    "title": "Plaid Casual Shirt",
+    "brand": "Levi's",
+    "gender": "Men",
     "price": 49.99
   },
-    {
-      "id": 2,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/qichhw3wrc1oekbxzudib.png",
-      "title": "Cap",
-      "price": 39.99
-    },
-    {
-      "id": 3,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/yy2498s8ucsxymaxsjzcf.png",
-      "title": "Acrylic Sweater",
-      "price": 29.99
-    },
-    {
-      "id": 4,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/sm8f1ubnfjennk9qbjsm4.png",
-      "title": "Winter Coat",
-      "price": 59.99
-    },
-    {
-      "id": 5,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/cveaf135d9wszids6gtd6.png",
-      "title": "Winter Shirts",
-      "price": 149.99
-    },
-    {
-      "id": 6,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567613/cwlk21f74nd91amr1zkh.png",
-      "title": "Shirts With Jacket",
-      "price": 79.99
-    },
-    {
-      "id": 7,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567613/cwlk21f74nd91amr1zkh.png",
-      "title": "Winter Jacket",
-      "price": 69.99
-    },
-    {
-      "id": 8,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/qichhw3wrc1oekbxzudib.png",
-      "title": "Blue Jeans",
-      "price": 49.99
-    },
-    {
-      "id": 9,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/yy2498s8ucsxymaxsjzcf.png",
-      "title": "Cool Sweater",
-      "price": 29.99
-    },
-    {
-      "id": 10,
-      "image": "https://res.cloudinary.com/dlc5lyc1j/image/upload/v1710567612/sm8f1ubnfjennk9qbjsm4.png",
-      "title": "Park",
-      "price": 59.99
-    }
-  ]
+  {
+    "id": 3,
+    "image": "https://images.unsplash.com/photo-1618354690801-b9b6e1a7f779",
+    "title": "Track Jacket",
+    "brand": "Adidas",
+    "gender": "Men",
+    "price": 69.99
+  },
+  {
+    "id": 4,
+    "image": "https://images.unsplash.com/photo-1600180758890-6b94519b9a7f",
+    "title": "Leather Jacket",
+    "brand": "H&M",
+    "gender": "Men",
+    "price": 89.99
+  },
+  {
+    "id": 5,
+    "image": "https://images.unsplash.com/photo-1581012771982-7cbb49d65d02",
+    "title": "Winter Parka",
+    "brand": "The North Face",
+    "gender": "Men",
+    "price": 119.00
+  },
+  {
+    "id": 6,
+    "image": "https://images.unsplash.com/photo-1556909190-44720b2b5bff",
+    "title": "Floral Summer Dress",
+    "brand": "Forever 21",
+    "gender": "Women",
+    "price": 34.99
+  },
+  {
+    "id": 7,
+    "image": "https://images.unsplash.com/photo-1533236897111-3e94666b2edf",
+    "title": "High-Waist Jeans",
+    "brand": "Levi's",
+    "gender": "Women",
+    "price": 59.99
+  },
+  {
+    "id": 8,
+    "image": "https://images.unsplash.com/photo-1602810317753-29b2f1b39dba",
+    "title": "Oversized Hoodie",
+    "brand": "Nike",
+    "gender": "Women",
+    "price": 64.50
+  },
+  {
+    "id": 9,
+    "image": "https://images.unsplash.com/photo-1519741491154-18b7e3556f32",
+    "title": "Crop Top",
+    "brand": "H&M",
+    "gender": "Women",
+    "price": 19.99
+  },
+  {
+    "id": 10,
+    "image": "https://images.unsplash.com/photo-1599940824399-b87987ceb72a",
+    "title": "Puffer Jacket",
+    "brand": "Uniqlo",
+    "gender": "Women",
+    "price": 79.99
+  }
+]
+
 }

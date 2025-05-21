@@ -10,6 +10,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import FontAwesome6 from "react-native-vector-icons/FontAwesome6";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ProductDetailsScreen from './src/screen/ProductDetailsScreen';
+import CartScreen from './src/screen/CartScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack  = createNativeStackNavigator();
@@ -26,7 +27,9 @@ const Stack  = createNativeStackNavigator();
     <Stack.Navigator  screenOptions={{
       headerShown: false,
     }
-    }>
+    }
+
+    >
       <Stack.Screen name="HOME" component={HomeScreen} />
      <Stack.Screen name="PRODUCT_DETAILS" component={ProductDetailsScreen} />
     </Stack.Navigator>
@@ -42,7 +45,7 @@ screenOptions={{
   
 }}
 >
-  <Tab.Screen name='Home' component={HomeScreen}
+  <Tab.Screen name='Home_Stack' component={MyHomeStack}
   options={{
     tabBarIcon:({size,focused,color})=>{
       return <Entypo name={"home"} size={size} color={color} />
@@ -56,7 +59,7 @@ screenOptions={{
     },
   }}
   />
-  <Tab.Screen name='CART' component={Home}
+  <Tab.Screen name='CART' component={CartScreen}
   options={{
     tabBarIcon:({size,focused,color})=>{
       return <MaterialCommunityIcons name={"cart"} size={size} color={color} />
