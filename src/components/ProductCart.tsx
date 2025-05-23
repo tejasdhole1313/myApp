@@ -96,6 +96,6 @@ fontWeight:"600",
         borderRadius: 17,
         position:"absolute",
         top:10,
-        right:15,
+        right:25,
     }
 })
