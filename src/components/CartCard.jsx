@@ -2,28 +2,36 @@ import { StyleSheet, Text, View,Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6'
 const CartCard = ({item, deleteItemFromCart}) => {
-  return (
-   <View style={styles.container}>
-  <Image source={require("../assets/first.png")} style={styles.coverImage} />
+return (
+ <View style={styles.container}>
+  <Image source={{ uri: item.image }} style={styles.coverImage} />
+  
   <View style={styles.cardContent}>
-    <Text style={styles.title}>nf</Text>
-    <Text style={styles.price}>$69.00</Text>
-    <View style={styles.circleSizeContainer}>
+    
+    {/* Title + Price + Delete Icon in One Row */}
+    <View style={styles.topRow}>
+      <View>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.price}>${item.price}</Text>
+      </View>
 
-
-        <View style={styles.circle} />
-        <View style={styles.sizeCircle}>
-        <Text style={styles.sizetext}>L</Text>
+     
     </View>
+
+    {/* Color and Size */}
+    <View style={styles.circleSizeContainer}>
+      <View style={[styles.circle, { backgroundColor: item.color }]} />
+      <View style={styles.sizeCircle}>
+        <Text style={styles.sizetext}>{item.size}</Text>
+      </View>
     </View>
   </View>
- <TouchableOpacity onPress={() => {
-  deleteItemFromCart(item);
- }}>
-  <FontAwesome6 name={"trash"} color={"#F68CB5"} size={25} />
-  </TouchableOpacity>
+   <TouchableOpacity  onPress={() => deleteItemFromCart(item)}>
+        <FontAwesome6 name="trash" color="#F68CB5" size={25} />
+      </TouchableOpacity>
 </View>
-  )
+
+)
 }
 
 export default CartCard
@@ -78,5 +86,6 @@ flexDirection:"row",
     justifyContent:"center",
     alignItems:"center",
     marginLeft:10,
-  }
+  },
+
 })

@@ -1,33 +1,28 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useContext, useState } from 'react'
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useContext, useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/Header';
 import { useNavigation, useRoute } from '@react-navigation/core';
 import { CartContext } from '../context/CartContext';
-const sizes =["S","M", "L", "XL"];
-const colorArray = [
-  "#91A1B0",
-  "#B11D1D",
-  "#1F44A3",
-  "#9F632A",
-  "#1D752B",
-  "#000000",
-];
-const imageurl = 'https://t4.ftcdn.net/jpg/02/98/73/27/360_F_298732797_ayt6MgF0tTgXRCnLxqXaURS6ZCWztvRJ.jpg';
+
+const sizes = ["S", "M", "L", "XL"];
+const colorArray = ["#91A1B0", "#B11D1D", "#1F44A3", "#9F632A", "#1D752B", "#000000"];
+
 const ProductDetailsScreen = () => {
-  const navigation = useNavigation("PRODUCT_DETAILS", { item: selectedSize });
-  const {addToCart} = useContext(CartContext);
+  const navigation = useNavigation();
+  const { addToCart } = useContext(CartContext);
   const route = useRoute();
   const item = route.params?.item;
-   const[selectedSize, setSelecetedSize] = useState(null);
-    const[selectedColor, setSelecetedColor] = useState(null);
-    const handleAddToCart = (item) => {
-  if (!item) return;
-  item.size = selectedSize;
-  item.color = selectedColor;
-  addToCart(item);
-  navigation.navigate(("PRODUCT_DETAILS", { item }));
-};
+
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
+
+  const handleAddToCart = () => {
+    if (!item) return;
+    const newItem = { ...item, size: selectedSize, color: selectedColor };
+    addToCart(newItem);
+    navigation.navigate("CART_SCREEN"); // Or wherever your cart is
+  };
 
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
@@ -35,70 +30,45 @@ const ProductDetailsScreen = () => {
         <Header />
       </View>
       <ScrollView>
-        <Image source={require("../assets/first.png")} style={styles.coverImage} />
+        <Image source={{ uri: item.image }} style={styles.coverImage} />
+        <View style={styles.contentContainer}>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.price}>${item.price}</Text>
+        </View>
 
-
-      <View style={styles.contentContainer}>
-        <Text style={styles.title} >jacket</Text>
-        <Text style={styles.price} >$19.00</Text>
-      </View>
-      {/* size container */}
-      <Text style={[styles.title, styles.sizeText]}>
-        Size
-      </Text>
-      <View style={styles.sizeContainer}>
-
-        {sizes.map((size) => {
-          return (
-            <TouchableOpacity style={styles.sizeValueContainer}
-              onPress={() => {
-
-                setSelecetedSize(size);
-              }}>
-              <Text style={[styles.sizeValue, selectedSize == size && { color: "#E55B5B" },]}>{size}</Text>
+        <Text style={[styles.title, styles.sizeText]}>Size</Text>
+        <View style={styles.sizeContainer}>
+          {sizes.map((size) => (
+            <TouchableOpacity key={size} style={styles.sizeValueContainer} onPress={() => setSelectedSize(size)}>
+              <Text style={[styles.sizeValue, selectedSize === size && { color: "#E55B5B" }]}>{size}</Text>
             </TouchableOpacity>
-          );
-        })}
-      </View>
-      <Text style={[styles.title, styles.colorText]}>
-        Color
-      </Text>
-      <View style={styles.colorContainer}>
-        {
-          colorArray.map((color) => {
-            return (
-              <TouchableOpacity
-                onPress={() => {
-                  setSelecetedColor(color);
-                }}
-                style={[styles.circleBorder,
-                selectedColor === color && {
-                  borderColor: color,
-                  borderWidth: 2,
-                }
-                ]} >
-                <View style={[styles.circle, { backgroundColor: color }]} />
-              </TouchableOpacity>
-            )
-          })
-        }
-      </View>
-      {/*  button container */}
-      <TouchableOpacity style={styles.button}
-      onPress={() => {
-        handleAddToCart(item);
-      }}
-      >
-        <Text style={styles.buttonText
-        }>Add to Cart</Text>
-      </TouchableOpacity>
+          ))}
+        </View>
+
+        <Text style={[styles.title, styles.colorText]}>Color</Text>
+        <View style={styles.colorContainer}>
+          {colorArray.map((color) => (
+            <TouchableOpacity key={color} onPress={() => setSelectedColor(color)} style={[
+              styles.circleBorder,
+              selectedColor === color && { borderColor: color, borderWidth: 2 }
+            ]}>
+              <View style={[styles.circle, { backgroundColor: color }]} />
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        <TouchableOpacity style={styles.button} onPress={handleAddToCart}>
+          <Text style={styles.buttonText}>Add to Cart</Text>
+        </TouchableOpacity>
       </ScrollView>
     </LinearGradient>
-  )
-}
+  );
+};
 
- 
-export default ProductDetailsScreen
+export default ProductDetailsScreen;
+
+// (Keep your styles below unchanged or as needed)
+
 
 const styles = StyleSheet.create({
 

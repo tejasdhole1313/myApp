@@ -62,7 +62,7 @@ screenOptions={{
     },
   }}
   />
-  <Tab.Screen name='CART' component={CartScreen}
+  <Tab.Screen name='CART_SCREEN' component={CartScreen}
   options={{
     tabBarIcon:({size,color })=>{
       const {cart} = useContext(CartContext);
@@ -70,24 +70,25 @@ screenOptions={{
   return (
     <View style={{position:"relative"}}>
   <MaterialCommunityIcons name={"cart"} size={size} color={color} />
-   <View style={{
-    height:14,
-    width:14,
-    borderRadius:7,
-    backgroundColor:"#E96E6E",
-    justifyContent:"center",
-    position:"absolute",
-    top:-10,
-    right:-5,
-   }}>
-<Text style={{
-  fontSize:10,
-  color:"white",
-  fontWeight:"500" ,
-  textAlign:"center"
-}}>{cart?.length}</Text>
+     <View style={{
+       height:14,
+       width:14,
+       borderRadius:7,
+       backgroundColor:"#E96E6E",
+       justifyContent:"center",
+       position:"absolute",
+       top:-10,
+       right:-5,
+     }}>
+       <Text style={{
+         fontSize:10,
+         color:"white",
+         fontWeight:"500" ,
+         textAlign:"center"
+       }}> {cart?.length}</Text>
+     </View>
+   
    </View>
-    </View>
   );
 },
   }}/>

@@ -4,49 +4,65 @@ import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/Header';
 import CartCard from '../components/CartCard';
 import { CartContext } from '../context/CartContext';
-const CartScreen = () => {
-  const {carts, totalprice, deleteItemFromCart} = useContext(CartContext);
+
+ const CartScreen = () => {
+  const { carts, deleteItemFromCart } = useContext(CartContext);
+
+  // Calculate total price of all items
+  const totalprice = carts.reduce((sum, item) => sum + (item.price || 0), 0);
+
+  // Flat rate shipping (optional: add condition like free shipping above $100)
+  const shipping = totalprice > 0 ? 5.0 : 0.0;
+
+  // Grand Total = items + shipping
+  const grandTotal = totalprice + shipping;
+
 
   return (
-   <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
-<View style={styles.headercontainer}>
-<Header  isCart={true}/>
-</View>
+  <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
+  <View style={styles.headercontainer}>
+    <Header isCart={true} />
+  </View>
 
-<FlatList data={carts} renderItem={({item}) => <CartCard item={item} 
-deleteItemFromCart= {deleteItemFromCart}/>}
+  <FlatList
+    data={carts}
+    renderItem={({ item }) => (
+      <CartCard item={item} deleteItemFromCart={deleteItemFromCart} />
+    )}
+    ListFooterComponent={
+      <>
 
-
-ListFooterComponent={<><View style={styles.priceContainer
-}>
-  <View style={styles.priceTitle
-  }>
+<View style={styles.priceContainer}>
+  <View style={styles.priceTitle}>
     <Text style={styles.text}>Total :</Text>
-    <Text style={styles.text}>${totalprice}</Text>
+    <Text style={styles.text}>${totalprice.toFixed(2)}</Text>
   </View>
-   <View style={styles.priceTitle}>
-    <Text style={styles.text}>Shopping :</Text>
-    <Text style={styles.text}>$0.0</Text>
+  <View style={styles.priceTitle}>
+    <Text style={styles.text}>Shipping :</Text>
+    <Text style={styles.text}>${shipping.toFixed(2)}</Text>
   </View>
 </View>
-<View style={styles.divider}/>
-  
- <View style={styles.priceTitle}>
-    <Text style={styles.text}>Grand Total :</Text>
-    <Text style={[styles.text, { color: "black" }]}>${totalprice}</Text>
-  </View></>}
-  showsVerticalScrollIndicator=
-  {false}
-  contentContainerStyle={{
-    paddingBottom:"100"
-  }}
-  ></FlatList>
+
+<View style={styles.divider} />
+
+<View style={styles.priceTitle}>
+  <Text style={styles.text}>Grand Total :</Text>
+  <Text style={[styles.text, { color: "black" }]}>
+    ${grandTotal.toFixed(2)}
+  </Text>
+</View>
+
+      </>
+    }
+    showsVerticalScrollIndicator={false}
+    contentContainerStyle={{ paddingBottom: 100 }}
+  />
 
   <TouchableOpacity style={styles.button}>
-   <Text style={styles.btnTitle}>Checkout</Text>
+    <Text style={styles.btnTitle}>Checkout</Text>
   </TouchableOpacity>
- 
-   </LinearGradient>
+</LinearGradient>
+
   )
 }
 

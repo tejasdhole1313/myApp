@@ -14,7 +14,7 @@ interface ProductCartProps {
 }
 
 type RootStackParamList = {
-  PRODUCT_DETAILS: undefined;
+  PRODUCT_DETAILS: { item: { image: string; title: string; price: number } };
   // add other routes here if needed
 };
 
@@ -27,25 +27,24 @@ function ProductCart({ item }: ProductCartProps) {
   };
 
   return (
-    <TouchableOpacity  onPress={()=> {
-      navigation.navigate("PRODUCT_DETAILS")
-    }} style={styles.container}>
+    <TouchableOpacity  onPress={() => navigation.navigate("PRODUCT_DETAILS", { item })} 
+    style={styles.container}>
   <Image source={{ uri: item.image }} style={styles.coverImage} />
 
       <View>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.price}>${item.price}</Text>
       </View>
-      <TouchableOpacity
-        onPress={toggleLike}
-        style={styles.likeContainer}
-      >
-        {isLiked ? (
-          <AntDesign name="heart" size={20} color="#E55B5B" />
-        ) : (
-          <AntDesign name="hearto" size={20} color="#E55B5B" />
-        )}
-      </TouchableOpacity>
+       <TouchableOpacity
+      style={styles.likeContainer}
+      onPress={() => setIsLiked(!isLiked)} // Toggle the state on press
+    >
+      {isLiked ? (
+        <AntDesign name="heart" size={20} color="#E55B5B" />
+      ) : (
+        <AntDesign name="hearto" size={20} color="#E55B5B" />
+      )}
+    </TouchableOpacity>
     </TouchableOpacity>
   );
 }

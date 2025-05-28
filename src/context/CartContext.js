@@ -4,10 +4,12 @@ import { Children, createContext, useEffect, useState } from "react";
  export const CartContext = createContext();
  export const CartProvider = ({children}) => {
   const [carts, setCarts ] = useState([]);
- const [totalPrice , SetTotalPrice] = useState(0);
-  useEffect(() => {
-    loadCartItems();
-  }, []);
+  const totalprice = carts.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+//  const [totalPrice , SetTotalPrice] = useState(0);
+//   useEffect(() => {
+//     loadCartItems();
+//   }, []);
 
   const loadCartItems = async () => {
     let carts = await AsyncStorage.getItem("carts");
@@ -36,12 +38,12 @@ import { Children, createContext, useEffect, useState } from "react";
   const totalSum = () => {
     return carts.reduce((amount, item) => amount + item.price, 0);
     console.log("totalSum", totalSum);
-    SetTotalPrice(totalSum);
+    totalprice(totalSum);
   }
 const value = {
   carts,
   addToCart,
-  totalPrice,
+  totalprice,
   deleteItemFromCart
 }
  return <CartContext.Provider value={value}>{children}</CartContext.Provider>

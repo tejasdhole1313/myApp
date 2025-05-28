@@ -38,9 +38,11 @@ const SinglePageAuth = () => {
   };
 
   return (
-    <LinearGradient colors={['#FDF0F3', '#FFFBFC']} style={styles.container}>
-   
-      {!isLoggedIn ? (
+      <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
+  <View style={styles.headercontainer}>
+    <Header isCart={true} />
+  </View>
+        {!isLoggedIn ? (
         <View style={styles.authBox}>
           <Text style={styles.title}>{isSignup ? 'Sign Up' : 'Login'}</Text>
 
@@ -91,18 +93,20 @@ const SinglePageAuth = () => {
           </TouchableOpacity>
         </View>
       )}
-    </LinearGradient>
+  </LinearGradient>
+   
   );
 };
 
 export default SinglePageAuth;
 
 const styles = StyleSheet.create({
+ headercontainer:{
+    marginBottom:20,
+  },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    padding: 24,
-    alignItems: 'center',
+    padding: 10,
   },
   authBox: {
     width: '100%',
