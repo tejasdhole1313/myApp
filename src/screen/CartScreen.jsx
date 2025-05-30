@@ -3,21 +3,16 @@ import React, { useContext, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/Header';
 import CartCard from '../components/CartCard';
-import { CartContext } from '../context/CartContext';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteFromCart } from '../redux/cartSlice';
 
  const CartScreen = () => {
-  const { carts, deleteItemFromCart } = useContext(CartContext);
-
-  // Calculate total price of all items
-  const totalprice = carts.reduce((sum, item) => sum + (item.price || 0), 0);
-
-  // Flat rate shipping (optional: add condition like free shipping above $100)
-  const shipping = totalprice > 0 ? 5.0 : 0.0;
-
-  // Grand Total = items + shipping
-  const grandTotal = totalprice + shipping;
-
-
+  
+const dispatch = useDispatch();
+const carts = useSelector(state => state.cartState.cart);
+const totalprice = carts.reduce((sum, item) => sum + (item.price || 0), 0);
+const shipping = carts.length > 0 ? 5 : 0;
+const grandTotal = totalprice + shipping;
   return (
   <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
   <View style={styles.headercontainer}>
@@ -27,7 +22,8 @@ import { CartContext } from '../context/CartContext';
   <FlatList
     data={carts}
     renderItem={({ item }) => (
-      <CartCard item={item} deleteItemFromCart={deleteItemFromCart} />
+      <CartCard item={item} deleteItemFromCart={() => dispatch(deleteFromCart(item))} />
+
     )}
     ListFooterComponent={
       <>

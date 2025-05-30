@@ -1,5 +1,5 @@
 import { createStaticNavigation, NavigationContainer } from '@react-navigation/native'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreen from './src/screen/HomeScreen';
@@ -13,6 +13,10 @@ import ProductDetailsScreen from './src/screen/ProductDetailsScreen';
 import CartScreen from './src/screen/CartScreen';
 import SinglePageAuth from './src/components/SinglePageAuth';
 import { CartContext, CartProvider } from './src/context/CartContext';
+import { Provider } from 'react-redux';
+import store from './src/redux/store';
+import CartIconWithBadge from './src/components/CartIconWithBadge';
+
 
 const Tab = createBottomTabNavigator();
 const Stack  = createNativeStackNavigator();
@@ -37,9 +41,10 @@ const Stack  = createNativeStackNavigator();
     </Stack.Navigator>
   );
  };
+
 function App() {
   return (
-   <CartProvider>
+    <Provider store={store}>
    <NavigationContainer>
 <Tab.Navigator
 screenOptions={{
@@ -62,36 +67,16 @@ screenOptions={{
     },
   }}
   />
-  <Tab.Screen name='CART_SCREEN' component={CartScreen}
+<Tab.Screen
+  name='CART_SCREEN'
+  component={CartScreen}
   options={{
-    tabBarIcon:({size,color })=>{
-      const {cart} = useContext(CartContext);
-      
-  return (
-    <View style={{position:"relative"}}>
-  <MaterialCommunityIcons name={"cart"} size={size} color={color} />
-     <View style={{
-       height:14,
-       width:14,
-       borderRadius:7,
-       backgroundColor:"#E96E6E",
-       justifyContent:"center",
-       position:"absolute",
-       top:-10,
-       right:-5,
-     }}>
-       <Text style={{
-         fontSize:10,
-         color:"white",
-         fontWeight:"500" ,
-         textAlign:"center"
-       }}> {cart?.length}</Text>
-     </View>
-   
-   </View>
-  );
-},
-  }}/>
+    tabBarIcon: ({ size, color }) => (
+      <CartIconWithBadge size={size} color={color} />
+    ),
+  }}
+/>
+
   <Tab.Screen
   name='ACCOUNT'
   component={SinglePageAuth}
@@ -103,7 +88,7 @@ screenOptions={{
 />
 </Tab.Navigator>
    </NavigationContainer>
- </CartProvider>
+</Provider>
   )
 }
 

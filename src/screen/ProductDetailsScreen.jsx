@@ -3,27 +3,31 @@ import React, { useContext, useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/Header';
 import { useNavigation, useRoute } from '@react-navigation/core';
-import { CartContext } from '../context/CartContext';
+// import { CartContext } from '../context/CartContext';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/cartSlice';
 
 const sizes = ["S", "M", "L", "XL"];
 const colorArray = ["#91A1B0", "#B11D1D", "#1F44A3", "#9F632A", "#1D752B", "#000000"];
 
 const ProductDetailsScreen = () => {
+  
+const dispatch = useDispatch();
   const navigation = useNavigation();
-  const { addToCart } = useContext(CartContext);
   const route = useRoute();
   const item = route.params?.item;
 
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
 
-  const handleAddToCart = () => {
-    if (!item) return;
-    const newItem = { ...item, size: selectedSize, color: selectedColor };
-    addToCart(newItem);
-    navigation.navigate("CART_SCREEN"); // Or wherever your cart is
-  };
-
+ const handleAddToCart = () => {
+  if (!selectedSize || !selectedColor) {
+    return;
+  }
+  const newItem = { ...item, size: selectedSize, color: selectedColor };
+  dispatch(addToCart(newItem));
+  navigation.navigate("CART_SCREEN");
+};
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
       <View style={styles.headerContainer}>
@@ -66,10 +70,6 @@ const ProductDetailsScreen = () => {
 };
 
 export default ProductDetailsScreen;
-
-// (Keep your styles below unchanged or as needed)
-
-
 const styles = StyleSheet.create({
 
   container:{

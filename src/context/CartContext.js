@@ -6,11 +6,6 @@ import { Children, createContext, useEffect, useState } from "react";
   const [carts, setCarts ] = useState([]);
   const totalprice = carts.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-//  const [totalPrice , SetTotalPrice] = useState(0);
-//   useEffect(() => {
-//     loadCartItems();
-//   }, []);
-
   const loadCartItems = async () => {
     let carts = await AsyncStorage.getItem("carts");
     carts = carts ? JSON.parse(carts) : [];

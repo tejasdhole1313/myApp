@@ -1,7 +1,10 @@
 import { StyleSheet, Text, View,Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6'
+import { useDispatch } from 'react-redux';
+import { deleteFromCart } from '../redux/cartSlice';
 const CartCard = ({item, deleteItemFromCart}) => {
+  const dispatch = useDispatch();
 return (
  <View style={styles.container}>
   <Image source={{ uri: item.image }} style={styles.coverImage} />
@@ -26,9 +29,9 @@ return (
       </View>
     </View>
   </View>
-   <TouchableOpacity  onPress={() => deleteItemFromCart(item)}>
-        <FontAwesome6 name="trash" color="#F68CB5" size={25} />
-      </TouchableOpacity>
+ <TouchableOpacity onPress={() => dispatch(deleteFromCart(item))}>
+  <FontAwesome6 name="trash" color="#F68CB5" size={25} />
+</TouchableOpacity>
 </View>
 
 )

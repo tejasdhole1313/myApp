@@ -5,15 +5,31 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 
 type RootStackParamList = {
   Home_Stack: undefined;
-  // add other routes here if needed
 };
 
 type HeaderProps = {
   isCart: boolean;
 };
+// import or define CartIconWithBadge before using it
+// import CartIconWithBadge from './CartIconWithBadge'; // Uncomment and adjust the path if you have this component
+
+// If you don't have the component, you can define a placeholder:
+const CartIconWithBadge = () => (
+  <Ionicons name="cart" size={24} color="#E96E6E" />
+);
+
+// Move navigation.setOptions inside a useEffect in the component
+import { useEffect } from 'react';
 
 function Header({isCart}: HeaderProps) {
  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
+ useEffect(() => {
+   navigation.setOptions({
+     headerRight: () => <CartIconWithBadge />,
+   });
+ }, [navigation]);
+
   return (
    <View style={styles.container}>
     <TouchableOpacity onPress={() => navigation.navigate("Home_Stack")} style={styles.appIconContainer}>

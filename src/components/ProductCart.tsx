@@ -37,7 +37,7 @@ function ProductCart({ item }: ProductCartProps) {
       </View>
        <TouchableOpacity
       style={styles.likeContainer}
-      onPress={() => setIsLiked(!isLiked)} // Toggle the state on press
+      onPress={() => setIsLiked(!isLiked)}
     >
       {isLiked ? (
         <AntDesign name="heart" size={20} color="#E55B5B" />
