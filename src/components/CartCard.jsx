@@ -8,10 +8,7 @@ const CartCard = ({item, deleteItemFromCart}) => {
 return (
  <View style={styles.container}>
   <Image source={{ uri: item.image }} style={styles.coverImage} />
-  
   <View style={styles.cardContent}>
-    
-    {/* Title + Price + Delete Icon in One Row */}
     <View style={styles.topRow}>
       <View>
         <Text style={styles.title}>{item.title}</Text>
@@ -21,7 +18,7 @@ return (
      
     </View>
 
-    {/* Color and Size */}
+   
     <View style={styles.circleSizeContainer}>
       <View style={[styles.circle, { backgroundColor: item.color }]} />
       <View style={styles.sizeCircle}>

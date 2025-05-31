@@ -1,5 +1,3 @@
-// src/components/CartIconWithBadge.js
-
 import React from 'react';
 import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
@@ -7,8 +5,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 const CartIconWithBadge = ({ size , color }) => {
  const carts = useSelector(state => state.cartState.cart);
-
-
   return (
     <View style={{ position: "relative" }}>
       <MaterialCommunityIcons name="cart" size={size} color={color} />

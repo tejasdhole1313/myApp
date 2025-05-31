@@ -2,99 +2,143 @@
   "products": [
   {
     "id": 1,
-    "image": "https://t4.ftcdn.net/jpg/02/98/73/27/360_F_298732797_ayt6MgF0tTgXRCnLxqXaURS6ZCWztvRJ.jpg",
-    "title": "Slim Fit Shirt",
-    "brand": "Zara",
-    "gender": "Men",
-    "price": 39.99
+    "title": "Men's Casual Shirt",
+    "image": "https://www.cubavera.com/cdn/shop/files/Classic-Textured-One-Pocket-Shirt-Cubavera-2_10f7b14e_180x.jpg?v=1746218097",
+    "price": 1299,
+    "gender": "male"
   },
   {
     "id": 2,
-    "image": "https://images.unsplash.com/photo-158515577 7730-486b44d4e694",
-    "title": "Plaid Casual Shirt",
-    "brand": "Levi's",
-    "gender": "Men",
-    "price": 49.99
+    "title": "Men's Formal Trousers",
+    "image": "https://us.mossbros.com/moss-london-skinny-fit-ink-trousers-966296064",
+    "price": 1499,
+    "gender": "male"
   },
   {
     "id": 3,
-    "image": "https://images.unsplash.com/photo-1618354690801-b9b6e1a7f779",
-    "title": "Track Jacket",
-    "brand": "Adidas",
-    "gender": "Men",
-    "price": 69.99
+    "title": "Men's Denim Jacket",
+    "image": "https://example.com/images/mens-jacket1.jpg",
+    "price": 2199,
+    "gender": "male"
   },
   {
     "id": 4,
-    "image": "https://images.unsplash.com/photo-1600180758890-6b94519b9a7f",
-    "title": "Leather Jacket",
-    "brand": "H&M",
-    "gender": "Men",
-    "price": 89.99
+    "title": "Men's Printed T-Shirt",
+    "image": "https://example.com/images/mens-tshirt1.jpg",
+    "price": 799,
+    "gender": "male"
   },
   {
     "id": 5,
-    "image": "https://images.unsplash.com/photo-1581012771982-7cbb49d65d02",
-    "title": "Winter Parka",
-    "brand": "The North Face",
-    "gender": "Men",
-    "price": 119.00
+    "title": "Men's Cargo Pants",
+    "image": "https://example.com/images/mens-cargo1.jpg",
+    "price": 1599,
+    "gender": "male"
   },
   {
     "id": 6,
-    "image": "https://images.unsplash.com/photo-1556909190-44720b2b5bff",
-    "title": "Floral Summer Dress",
-    "brand": "Forever 21",
-    "gender": "Women",
-    "price": 34.99
+    "title": "Men's Leather Jacket",
+    "image": "https://example.com/images/mens-leather1.jpg",
+    "price": 2999,
+    "gender": "male"
   },
   {
     "id": 7,
-    "image": "https://images.unsplash.com/photo-1533236897111-3e94666b2edf",
-    "title": "High-Waist Jeans",
-    "brand": "Levi's",
-    "gender": "Women",
-    "price": 59.99
+    "title": "Men's Hoodie",
+    "image": "https://example.com/images/mens-hoodie1.jpg",
+    "price": 1299,
+    "gender": "male"
   },
   {
     "id": 8,
-    "image": "https://images.unsplash.com/photo-1602810317753-29b2f1b39dba",
-    "title": "Oversized Hoodie",
-    "brand": "Nike",
-    "gender": "Women",
-    "price": 64.50
+    "title": "Men's Sweatpants",
+    "image": "https://example.com/images/mens-sweatpants1.jpg",
+    "price": 999,
+    "gender": "male"
   },
   {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     "id": 9,
-    "image": "https://images.unsplash.com/photo-1519741491154-18b7e3556f32",
-    "title": "Crop Top",
-    "brand": "H&M",
-    "gender": "Women",
-    "price": 19.99
+    "title": "Men's Polo Shirt",
+    "image": "https://example.com/images/mens-polo1.jpg",
+    "price": 1099,
+    "gender": "male"
   },
   {
     "id": 10,
-    "image": "https://images.unsplash.com/photo-1599940824399-b87987ceb72a",
-    "title": "Puffer Jacket",
-    "brand": "Uniqlo",
-    "gender": "Women",
-    "price": 79.99
+    "title": "Men's Blazer",
+    "image": "https://example.com/images/mens-blazer1.jpg",
+    "price": 3499,
+    "gender": "male"
+  },
+  {
+    "id": 11,
+    "title": "Women's Floral Dress",
+    "image": "https://example.com/images/womens-dress1.jpg",
+    "price": 1399,
+    "gender": "female"
+  },
+  {
+    "id": 12,
+    "title": "Women's Denim Skirt",
+    "image": "https://example.com/images/womens-skirt1.jpg",
+    "price": 1199,
+    "gender": "female"
+  },
+  {
+    "id": 13,
+    "title": "Women's Crop Top",
+    "image": "https://example.com/images/womens-top1.jpg",
+    "price": 799,
+    "gender": "female"
+  },
+  {
+    "id": 14,
+    "title": "Women's Ethnic Kurti",
+    "image": "https://example.com/images/womens-kurti1.jpg",
+    "price": 999,
+    "gender": "female"
+  },
+  {
+    "id": 15,
+    "title": "Women's Jeggings",
+    "image": "https://example.com/images/womens-jeggings1.jpg",
+    "price": 899,
+    "gender": "female"
+  },
+  {
+    "id": 16,
+    "title": "Women's Long Coat",
+    "image": "https://example.com/images/womens-coat1.jpg",
+    "price": 2499,
+    "gender": "female"
+  },
+  {
+    "id": 17,
+    "title": "Women's Hoodie",
+    "image": "https://example.com/images/womens-hoodie1.jpg",
+    "price": 1199,
+    "gender": "female"
+  },
+  {
+    "id": 18,
+    "title": "Women's Palazzo Pants",
+    "image": "https://example.com/images/womens-palazzo1.jpg",
+    "price": 1099,
+    "gender": "female"
+  },
+  {
+    "id": 19,
+    "title": "Women's Maxi Dress",
+    "image": "https://example.com/images/womens-maxi1.jpg",
+    "price": 1799,
+    "gender": "female"
+  },
+  {
+    "id": 20,
+    "title": "Women's Blouse & Skirt",
+    "image": "https://example.com/images/womens-blouse1.jpg",
+    "price": 1999,
+    "gender": "female"
   }
 ]
 

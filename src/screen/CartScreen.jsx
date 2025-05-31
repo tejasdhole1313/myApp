@@ -5,14 +5,15 @@ import Header from '../components/Header';
 import CartCard from '../components/CartCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteFromCart } from '../redux/cartSlice';
+import { useNavigation } from '@react-navigation/native';
 
- const CartScreen = () => {
-  
+const CartScreen = () => {
 const dispatch = useDispatch();
 const carts = useSelector(state => state.cartState.cart);
 const totalprice = carts.reduce((sum, item) => sum + (item.price || 0), 0);
 const shipping = carts.length > 0 ? 5 : 0;
 const grandTotal = totalprice + shipping;
+
   return (
   <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
   <View style={styles.headercontainer}>
@@ -54,9 +55,9 @@ const grandTotal = totalprice + shipping;
     contentContainerStyle={{ paddingBottom: 100 }}
   />
 
-  <TouchableOpacity style={styles.button}>
-    <Text style={styles.btnTitle}>Checkout</Text>
-  </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+      <Text style={styles.btnTitle}>Checkout</Text>
+    </TouchableOpacity>
 </LinearGradient>
 
   )

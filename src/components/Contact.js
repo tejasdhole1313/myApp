@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../../Ecommerce/src/components/Header';
+import { useNavigation } from '@react-navigation/native';
 
-const SinglePageAuth = () => {
+const Contact = () => {
+  const navigation = useNavigation(); 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
   const [name, setName] = useState('');
@@ -20,6 +22,7 @@ const SinglePageAuth = () => {
   const handleLogin = () => {
     if (email === dummyUser.email && password === dummyUser.password) {
       setIsLoggedIn(true);
+      navigation.goBack(); 
     } else {
       alert('Invalid credentials');
     }
@@ -28,24 +31,17 @@ const SinglePageAuth = () => {
   const handleSignup = () => {
     alert('Signup successful (dummy)!');
     setIsSignup(false);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setEmail('');
-    setPassword('');
-    setName('');
+    navigation.goBack(); 
   };
 
   return (
-      <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
-  <View style={styles.headercontainer}>
-    <Header isCart={true} />
-  </View>
-        {!isLoggedIn ? (
+    <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
+      <View style={styles.headercontainer}>
+        <Header isCart={true} />
+      </View>
+      {!isLoggedIn ? (
         <View style={styles.authBox}>
-          <Text style={styles.title}>{isSignup ? 'Sign Up' : 'Login'}</Text>
-
+          <Text style={styles.title}>{isSignup ? 'Create Acount ' : 'Sign In'}</Text>
           {isSignup && (
             <TextInput
               placeholder="Name"
@@ -54,7 +50,6 @@ const SinglePageAuth = () => {
               style={styles.input}
             />
           )}
-
           <TextInput
             placeholder="Email"
             value={email}
@@ -69,14 +64,12 @@ const SinglePageAuth = () => {
             style={styles.input}
             secureTextEntry
           />
-
           <TouchableOpacity
             style={styles.button}
             onPress={isSignup ? handleSignup : handleLogin}
           >
             <Text style={styles.buttonText}>{isSignup ? 'Sign Up' : 'Login'}</Text>
           </TouchableOpacity>
-
           <TouchableOpacity onPress={() => setIsSignup(!isSignup)}>
             <Text style={styles.linkText}>
               {isSignup ? 'Already have an account? Login' : 'Don’t have an account? Sign Up'}
@@ -93,12 +86,12 @@ const SinglePageAuth = () => {
           </TouchableOpacity>
         </View>
       )}
-  </LinearGradient>
-   
+    </LinearGradient>
   );
 };
 
-export default SinglePageAuth;
+export default Contact;
+
 
 const styles = StyleSheet.create({
  headercontainer:{

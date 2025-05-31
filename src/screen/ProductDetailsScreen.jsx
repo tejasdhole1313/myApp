@@ -6,21 +6,16 @@ import { useNavigation, useRoute } from '@react-navigation/core';
 // import { CartContext } from '../context/CartContext';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
-
 const sizes = ["S", "M", "L", "XL"];
 const colorArray = ["#91A1B0", "#B11D1D", "#1F44A3", "#9F632A", "#1D752B", "#000000"];
-
-const ProductDetailsScreen = () => {
-  
+const ProductDetailsScreen = () => { 
 const dispatch = useDispatch();
   const navigation = useNavigation();
   const route = useRoute();
   const item = route.params?.item;
-
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
-
- const handleAddToCart = () => {
+  const handleAddToCart = () => {
   if (!selectedSize || !selectedColor) {
     return;
   }
@@ -60,7 +55,6 @@ const dispatch = useDispatch();
             </TouchableOpacity>
           ))}
         </View>
-
         <TouchableOpacity style={styles.button} onPress={handleAddToCart}>
           <Text style={styles.buttonText}>Add to Cart</Text>
         </TouchableOpacity>

@@ -11,8 +11,9 @@ import FontAwesome6 from "react-native-vector-icons/FontAwesome6";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ProductDetailsScreen from './src/screen/ProductDetailsScreen';
 import CartScreen from './src/screen/CartScreen';
-import SinglePageAuth from './src/components/SinglePageAuth';
-import { CartContext, CartProvider } from './src/context/CartContext';
+import Contact from './src/components/Contact';
+import ProfileScreen from './src/components/ProfileScreen';
+// import { CartContext, CartProvider } from './src/context/CartContext';
 import { Provider } from 'react-redux';
 import store from './src/redux/store';
 import CartIconWithBadge from './src/components/CartIconWithBadge';
@@ -37,8 +38,13 @@ const Stack  = createNativeStackNavigator();
 
     >
       <Stack.Screen name="HOME" component={HomeScreen} />
+       
+       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="Contact" component={Contact} />
      <Stack.Screen name="PRODUCT_DETAILS" component={ProductDetailsScreen} />
     </Stack.Navigator>
+    
+    
   );
  };
 
@@ -79,7 +85,7 @@ screenOptions={{
 
   <Tab.Screen
   name='ACCOUNT'
-  component={SinglePageAuth}
+  component={ProfileScreen}
   options={{
     tabBarIcon: ({ size, focused, color }) => (
       <Entypo name={'user'} size={size} color={color} />

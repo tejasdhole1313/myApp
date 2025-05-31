@@ -2,9 +2,6 @@ import { useNavigation, NavigationProp } from '@react-navigation/core';
 import React, { useState } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import AntDesign from "react-native-vector-icons/AntDesign";
-
-
- 
 interface ProductCartProps {
   item: {
     image: string;
@@ -15,7 +12,6 @@ interface ProductCartProps {
 
 type RootStackParamList = {
   PRODUCT_DETAILS: { item: { image: string; title: string; price: number } };
-  // add other routes here if needed
 };
 
 function ProductCart({ item }: ProductCartProps) {
