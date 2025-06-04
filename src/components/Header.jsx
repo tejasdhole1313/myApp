@@ -4,26 +4,17 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import ProfileScreen from './ProfileScreen';
 
-type RootStackParamList = {
-  Home_Stack: undefined;
-  ProfileScreen: undefined;
-};
 
-type HeaderProps = {
-  isCart: boolean;
-};
- 
-function Header({isCart}: HeaderProps) {
- const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-
+function Header({isCart}) {
+ const navigation = useNavigation();
  const handlePress = () => {
   navigation.navigate('ProfileScreen'); 
-
  };
+
 
   return (
    <View style={styles.container}>
-    <TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")} style={styles.appIconContainer}>
+    <TouchableOpacity  onPress={() => navigation.goBack()} style={styles.appIconContainer}>
       {
         isCart? (<Ionicons name={"chevron-back"} color={"#E96E6E"}  size={24}/>
         ):(
@@ -49,11 +40,11 @@ function Header({isCart}: HeaderProps) {
 export default Header
 const styles = StyleSheet.create({
   container:{
-flexDirection:"row",
+ flexDirection:"row",
 justifyContent:"space-between",
 alignItems:"center",
-paddingBottom:5,
-  },
+padding:10,
+},
   appIconContainer:{
   backgroundColor:"#FFFFFF",
   width:44,

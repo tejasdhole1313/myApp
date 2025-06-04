@@ -38,13 +38,14 @@ export default CartCard
 
 const styles = StyleSheet.create({
   container:{
-padding:10,
+padding:20,
 flexDirection:"row",
 
   },
   coverImage:{
     height:125,
     width:"25%",
+     borderRadius:5,
   },
   cardContent:{
    flex:1,
@@ -64,7 +65,7 @@ flexDirection:"row",
   circle:{
     height:32,
     width:32,
-    borderRadius:16,
+    borderRadius:18,
     backgroundColor:"#7094C1",
     
     

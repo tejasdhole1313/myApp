@@ -2,20 +2,18 @@ import { useNavigation, NavigationProp } from '@react-navigation/core';
 import React, { useState } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import AntDesign from "react-native-vector-icons/AntDesign";
-interface ProductCartProps {
-  item: {
-    image: string;
-    title: string;
-    price: number;
-  };
-}
+/**
+ * @typedef {Object} ProductCartProps
+ * @property {{ image: string; title: string; price: number }} item
+ */
 
-type RootStackParamList = {
-  PRODUCT_DETAILS: { item: { image: string; title: string; price: number } };
-};
+/**
+ * @typedef {Object} RootStackParamList
+ * @property {{ item: { image: string; title: string; price: number } }} PRODUCT_DETAILS
+ */
 
-function ProductCart({ item }: ProductCartProps) {
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+function ProductCart({ item }) {
+  const navigation = useNavigation();
   const [isLiked, setIsLiked] = useState(false);
 
   const toggleLike = () => {
@@ -83,14 +81,14 @@ fontWeight:"600",
 
     },
     likeContainer: {
-        height:34,
-        width:34,
+        height:32,
+        width:32,
         backgroundColor:"#FFFFFF",
         justifyContent:"center",
         alignItems:"center",
         borderRadius: 17,
         position:"absolute",
         top:10,
-        right:25,
+        right:20,
     }
 })

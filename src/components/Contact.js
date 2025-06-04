@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Header from '../../Ecommerce/src/components/Header';
+import Header from './Header';
 import { useNavigation } from '@react-navigation/native';
 
 const Contact = () => {

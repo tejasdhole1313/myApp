@@ -18,7 +18,7 @@ const ProfileScreen = () => {
       <ScrollView style={styles.container}>
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity>
+          <TouchableOpacity  onPress={() => navigation.goBack()}>
             <AntDesign name="arrowleft" size={24} color="black" />
           </TouchableOpacity>
           <Text style={styles.headerText}>Profile</Text>

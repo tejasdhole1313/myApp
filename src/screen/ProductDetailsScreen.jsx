@@ -26,7 +26,7 @@ const dispatch = useDispatch();
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
       <View style={styles.headerContainer}>
-        <Header />
+        <Header isCart={true} />
       </View>
       <ScrollView>
         <Image source={{ uri: item.image }} style={styles.coverImage} />
@@ -70,10 +70,7 @@ const styles = StyleSheet.create({
     flex: 1,
    
   },
-  headerContainer:{
-    padding:10,
-    
-  },
+
   coverImage: {
     width:"100%",
     height:400,

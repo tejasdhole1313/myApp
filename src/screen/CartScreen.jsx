@@ -13,7 +13,10 @@ const carts = useSelector(state => state.cartState.cart);
 const totalprice = carts.reduce((sum, item) => sum + (item.price || 0), 0);
 const shipping = carts.length > 0 ? 5 : 0;
 const grandTotal = totalprice + shipping;
-
+const navigation = useNavigation();
+ const handleCheckout = () => {
+  navigation.navigate("CheckoutScreen");
+ };
   return (
   <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
   <View style={styles.headercontainer}>
@@ -55,7 +58,7 @@ const grandTotal = totalprice + shipping;
     contentContainerStyle={{ paddingBottom: 100 }}
   />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleCheckout}>
       <Text style={styles.btnTitle}>Checkout</Text>
     </TouchableOpacity>
 </LinearGradient>
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 10,
+   
   },
   matchText: {
     fontSize: 28,
@@ -98,11 +101,13 @@ const styles = StyleSheet.create({
   divider:{
     borderWidth:2,
     borderColor:"#C0C0C0",
+    margin:5,
   },
   button:{
     backgroundColor:"#E96E6E",
-    padding:10,
-    borderRadius:10,
+  padding:10,
+  margin:10,
+  borderRadius:20,
   },
   btnTitle:{
     fontSize:25,

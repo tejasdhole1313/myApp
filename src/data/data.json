@@ -1,145 +1,355 @@
 {
   "products": [
-  {
-    "id": 1,
-    "title": "Men's Casual Shirt",
-    "image": "https://www.cubavera.com/cdn/shop/files/Classic-Textured-One-Pocket-Shirt-Cubavera-2_10f7b14e_180x.jpg?v=1746218097",
-    "price": 1299,
-    "gender": "male"
-  },
-  {
-    "id": 2,
-    "title": "Men's Formal Trousers",
-    "image": "https://us.mossbros.com/moss-london-skinny-fit-ink-trousers-966296064",
-    "price": 1499,
-    "gender": "male"
-  },
-  {
-    "id": 3,
-    "title": "Men's Denim Jacket",
-    "image": "https://example.com/images/mens-jacket1.jpg",
-    "price": 2199,
-    "gender": "male"
-  },
-  {
-    "id": 4,
-    "title": "Men's Printed T-Shirt",
-    "image": "https://example.com/images/mens-tshirt1.jpg",
-    "price": 799,
-    "gender": "male"
-  },
-  {
-    "id": 5,
-    "title": "Men's Cargo Pants",
-    "image": "https://example.com/images/mens-cargo1.jpg",
-    "price": 1599,
-    "gender": "male"
-  },
-  {
-    "id": 6,
-    "title": "Men's Leather Jacket",
-    "image": "https://example.com/images/mens-leather1.jpg",
-    "price": 2999,
-    "gender": "male"
-  },
-  {
-    "id": 7,
-    "title": "Men's Hoodie",
-    "image": "https://example.com/images/mens-hoodie1.jpg",
-    "price": 1299,
-    "gender": "male"
-  },
-  {
-    "id": 8,
-    "title": "Men's Sweatpants",
-    "image": "https://example.com/images/mens-sweatpants1.jpg",
-    "price": 999,
-    "gender": "male"
-  },
-  {
-    "id": 9,
-    "title": "Men's Polo Shirt",
-    "image": "https://example.com/images/mens-polo1.jpg",
-    "price": 1099,
-    "gender": "male"
-  },
-  {
-    "id": 10,
-    "title": "Men's Blazer",
-    "image": "https://example.com/images/mens-blazer1.jpg",
-    "price": 3499,
-    "gender": "male"
-  },
-  {
-    "id": 11,
-    "title": "Women's Floral Dress",
-    "image": "https://example.com/images/womens-dress1.jpg",
-    "price": 1399,
-    "gender": "female"
-  },
-  {
-    "id": 12,
-    "title": "Women's Denim Skirt",
-    "image": "https://example.com/images/womens-skirt1.jpg",
-    "price": 1199,
-    "gender": "female"
-  },
-  {
-    "id": 13,
-    "title": "Women's Crop Top",
-    "image": "https://example.com/images/womens-top1.jpg",
-    "price": 799,
-    "gender": "female"
-  },
-  {
-    "id": 14,
-    "title": "Women's Ethnic Kurti",
-    "image": "https://example.com/images/womens-kurti1.jpg",
-    "price": 999,
-    "gender": "female"
-  },
-  {
-    "id": 15,
-    "title": "Women's Jeggings",
-    "image": "https://example.com/images/womens-jeggings1.jpg",
-    "price": 899,
-    "gender": "female"
-  },
-  {
-    "id": 16,
-    "title": "Women's Long Coat",
-    "image": "https://example.com/images/womens-coat1.jpg",
-    "price": 2499,
-    "gender": "female"
-  },
-  {
-    "id": 17,
-    "title": "Women's Hoodie",
-    "image": "https://example.com/images/womens-hoodie1.jpg",
-    "price": 1199,
-    "gender": "female"
-  },
-  {
-    "id": 18,
-    "title": "Women's Palazzo Pants",
-    "image": "https://example.com/images/womens-palazzo1.jpg",
-    "price": 1099,
-    "gender": "female"
-  },
-  {
-    "id": 19,
-    "title": "Women's Maxi Dress",
-    "image": "https://example.com/images/womens-maxi1.jpg",
-    "price": 1799,
-    "gender": "female"
-  },
-  {
-    "id": 20,
-    "title": "Women's Blouse & Skirt",
-    "image": "https://example.com/images/womens-blouse1.jpg",
-    "price": 1999,
-    "gender": "female"
-  }
-]
+    {
+      "id": 1,
+      "title": "Men's Casual Shirt",
+      "image": "https://www.cubavera.com/cdn/shop/files/Classic-Textured-One-Pocket-Shirt-Cubavera-2_10f7b14e_180x.jpg?v=1746218097",
+      "price": 1299,
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "title": "Men's Formal Trousers",
+      "image": "https://www.cubavera.com/cdn/shop/files/Classic-Textured-One-Pocket-Shirt-Cubavera-2_10f7b14e_180x.jpg?v=1746218097",
+      "price": 1499,
+      "gender": "male"
+    },
+    {
+      "id": 3,
+      "title": "Men's Denim Jacket",
+      "image": "../../assets/product/p3.jpg",
+      "price": 2199,
+      "gender": "male"
+    },
+    {
+      "id": 4,
+      "title": "Men's Printed T-Shirt",
+      "image": "https://example.com/images/mens-tshirt1.jpg",
+      "price": 799,
+      "gender": "male"
+    },
+    {
+      "id": 5,
+      "title": "Men's Cargo Pants",
+      "image": "https://example.com/images/mens-cargo1.jpg",
+      "price": 1599,
+      "gender": "male"
+    },
+    {
+      "id": 6,
+      "title": "Men's Leather Jacket",
+      "image": "https://example.com/images/mens-leather1.jpg",
+      "price": 2999,
+      "gender": "male"
+    },
+    {
+      "id": 7,
+      "title": "Men's Hoodie",
+      "image": "https://example.com/images/mens-hoodie1.jpg",
+      "price": 1299,
+      "gender": "male"
+    },
+    {
+      "id": 8,
+      "title": "Men's Sweatpants",
+      "image": "https://example.com/images/mens-sweatpants1.jpg",
+      "price": 999,
+      "gender": "male"
+    },
+    {
+      "id": 9,
+      "title": "Men's Polo Shirt",
+      "image": "https://example.com/images/mens-polo1.jpg",
+      "price": 1099,
+      "gender": "male"
+    },
+    {
+      "id": 10,
+      "title": "Men's Blazer",
+      "image": "https://example.com/images/mens-blazer1.jpg",
+      "price": 3499,
+      "gender": "male"
+    },
+    {
+      "id": 11,
+      "title": "Women's Floral Dress",
+      "image": "https://example.com/images/womens-dress1.jpg",
+      "price": 1399,
+      "gender": "female"
+    },
+    {
+      "id": 12,
+      "title": "Women's Denim Skirt",
+      "image": "https://example.com/images/womens-skirt1.jpg",
+      "price": 1199,
+      "gender": "female"
+    },
+    {
+      "id": 13,
+      "title": "Women's Crop Top",
+      "image": "https://example.com/images/womens-top1.jpg",
+      "price": 799,
+      "gender": "female"
+    },
+    {
+      "id": 14,
+      "title": "Women's Ethnic Kurti",
+      "image": "https://example.com/images/womens-kurti1.jpg",
+      "price": 999,
+      "gender": "female"
+    },
+    {
+      "id": 15,
+      "title": "Women's Jeggings",
+      "image": "https://example.com/images/womens-jeggings1.jpg",
+      "price": 899,
+      "gender": "female"
+    },
+    {
+      "id": 16,
+      "title": "Women's Long Coat",
+      "image": "https://example.com/images/womens-coat1.jpg",
+      "price": 2499,
+      "gender": "female"
+    },
+    {
+      "id": 17,
+      "title": "Women's Hoodie",
+      "image": "https://example.com/images/womens-hoodie1.jpg",
+      "price": 1199,
+      "gender": "female"
+    },
+    {
+      "id": 18,
+      "title": "Women's Palazzo Pants",
+      "image": "https://example.com/images/womens-palazzo1.jpg",
+      "price": 1099,
+      "gender": "female"
+    },
+    {
+      "id": 19,
+      "title": "Women's Maxi Dress",
+      "image": "https://example.com/images/womens-maxi1.jpg",
+      "price": 1799,
+      "gender": "female"
+    },
+    {
+      "id": 20,
+      "title": "Women's Blouse & Skirt",
+      "image": "https://example.com/images/womens-blouse1.jpg",
+      "price": 1999,
+      "gender": "female"
+    },
 
+    {
+      "id": 21,
+      "title": "Men's Slim Fit Jeans",
+      "image": "https://example.com/images/mens-jeans1.jpg",
+      "price": 1699,
+      "gender": "male"
+    },
+    {
+      "id": 22,
+      "title": "Men's Puffer Jacket",
+      "image": "https://example.com/images/mens-puffer1.jpg",
+      "price": 2799,
+      "gender": "male"
+    },
+    {
+      "id": 23,
+      "title": "Men's Running Shoes",
+      "image": "https://example.com/images/mens-shoes1.jpg",
+      "price": 2099,
+      "gender": "male"
+    },
+    {
+      "id": 24,
+      "title": "Men's Wallet",
+      "image": "https://example.com/images/mens-wallet1.jpg",
+      "price": 499,
+      "gender": "male"
+    },
+    {
+      "id": 25,
+      "title": "Men's Sunglasses",
+      "image": "https://example.com/images/mens-sunglasses1.jpg",
+      "price": 899,
+      "gender": "male"
+    },
+    {
+      "id": 26,
+      "title": "Women's Party Gown",
+      "image": "https://example.com/images/womens-gown1.jpg",
+      "price": 2999,
+      "gender": "female"
+    },
+    {
+      "id": 27,
+      "title": "Women's Handbag",
+      "image": "https://example.com/images/womens-bag1.jpg",
+      "price": 1499,
+      "gender": "female"
+    },
+    {
+      "id": 28,
+      "title": "Women's Heels",
+      "image": "https://example.com/images/womens-heels1.jpg",
+      "price": 1899,
+      "gender": "female"
+    },
+    {
+      "id": 29,
+      "title": "Women's Scarf",
+      "image": "https://example.com/images/womens-scarf1.jpg",
+      "price": 499,
+      "gender": "female"
+    },
+    {
+      "id": 30,
+      "title": "Women's Leggings",
+      "image": "https://example.com/images/womens-leggings1.jpg",
+      "price": 799,
+      "gender": "female"
+    },
+    {
+      "id": 31,
+      "title": "Men's Beanie",
+      "image": "https://example.com/images/mens-beanie1.jpg",
+      "price": 399,
+      "gender": "male"
+    },
+    {
+      "id": 32,
+      "title": "Men's Tracksuit",
+      "image": "https://example.com/images/mens-tracksuit1.jpg",
+      "price": 2399,
+      "gender": "male"
+    },
+    {
+      "id": 33,
+      "title": "Men's Watch",
+      "image": "https://example.com/images/mens-watch1.jpg",
+      "price": 3199,
+      "gender": "male"
+    },
+    {
+      "id": 34,
+      "title": "Women's Sunglasses",
+      "image": "https://example.com/images/womens-sunglasses1.jpg",
+      "price": 899,
+      "gender": "female"
+    },
+    {
+      "id": 35,
+      "title": "Women's Sandals",
+      "image": "https://example.com/images/womens-sandals1.jpg",
+      "price": 1299,
+      "gender": "female"
+    },
+    {
+      "id": 36,
+      "title": "Women's Shrug",
+      "image": "https://example.com/images/womens-shrug1.jpg",
+      "price": 999,
+      "gender": "female"
+    },
+    {
+      "id": 37,
+      "title": "Women's Tote Bag",
+      "image": "https://example.com/images/womens-tote1.jpg",
+      "price": 1599,
+      "gender": "female"
+    },
+    {
+      "id": 38,
+      "title": "Men's Casual Blazer",
+      "image": "https://example.com/images/mens-blazer2.jpg",
+      "price": 2799,
+      "gender": "male"
+    },
+    {
+      "id": 39,
+      "title": "Women's Sports Bra",
+      "image": "https://example.com/images/womens-sportsbra1.jpg",
+      "price": 999,
+      "gender": "female"
+    },
+    {
+      "id": 40,
+      "title": "Men's Track Shorts",
+      "image": "https://example.com/images/mens-shorts1.jpg",
+      "price": 699,
+      "gender": "male"
+    },
+    {
+      "id": 41,
+      "title": "Women's Yoga Pants",
+      "image": "https://example.com/images/womens-yoga1.jpg",
+      "price": 1199,
+      "gender": "female"
+    },
+    {
+      "id": 42,
+      "title": "Men's Cotton Kurta",
+      "image": "https://example.com/images/mens-kurta1.jpg",
+      "price": 1399,
+      "gender": "male"
+    },
+    {
+      "id": 43,
+      "title": "Women's Ethnic Dupatta",
+      "image": "https://example.com/images/womens-dupatta1.jpg",
+      "price": 599,
+      "gender": "female"
+    },
+    {
+      "id": 44,
+      "title": "Men's Tank Top",
+      "image": "https://example.com/images/mens-tanktop1.jpg",
+      "price": 499,
+      "gender": "male"
+    },
+    {
+      "id": 45,
+      "title": "Women's Ankle Boots",
+      "image": "https://example.com/images/womens-boots1.jpg",
+      "price": 2599,
+      "gender": "female"
+    },
+    {
+      "id": 46,
+      "title": "Men's Loafers",
+      "image": "https://example.com/images/mens-loafers1.jpg",
+      "price": 2199,
+      "gender": "male"
+    },
+    {
+      "id": 47,
+      "title": "Women's Hairband Set",
+      "image": "https://example.com/images/womens-hairband1.jpg",
+      "price": 299,
+      "gender": "female"
+    },
+    {
+      "id": 48,
+      "title": "Men's Windbreaker",
+      "image": "https://example.com/images/mens-windbreaker1.jpg",
+      "price": 1899,
+      "gender": "male"
+    },
+    {
+      "id": 49,
+      "title": "Women's Cardigan",
+      "image": "https://example.com/images/womens-cardigan1.jpg",
+      "price": 1699,
+      "gender": "female"
+    },
+    {
+      "id": 50,
+      "title": "Men's Fedora Hat",
+      "image": "https://example.com/images/mens-fedora1.jpg",
+      "price": 899,
+      "gender": "male"
+    }
+  ]
 }

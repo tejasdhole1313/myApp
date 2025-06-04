@@ -17,17 +17,19 @@ import ProfileScreen from './src/components/ProfileScreen';
 import { Provider } from 'react-redux';
 import store from './src/redux/store';
 import CartIconWithBadge from './src/components/CartIconWithBadge';
+import CategoryPage from './src/screen/CategoryPage';
+import 'react-native-reanimated';
 
 
 const Tab = createBottomTabNavigator();
 const Stack  = createNativeStackNavigator();
- function  Home() {
-  return (
-    <View>
-      <Text  style={{color:"black"}}>Home</Text>
-    </View>
-  );
- }
+//  function  Home() {
+//   return ( 
+//     <View>
+//       <Text  style={{color:"black"}}>Home</Text>
+//     </View>
+//   );
+//  }
 
  const MyHomeStack = () => {
   return(
@@ -38,7 +40,7 @@ const Stack  = createNativeStackNavigator();
 
     >
       <Stack.Screen name="HOME" component={HomeScreen} />
-       
+       <Stack.Screen name="CategoryPage" component={CategoryPage} />
        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="Contact" component={Contact} />
      <Stack.Screen name="PRODUCT_DETAILS" component={ProductDetailsScreen} />
@@ -66,7 +68,7 @@ screenOptions={{
     },
   }}
   />
-  <Tab.Screen name='REORDER' component={Home}
+  <Tab.Screen name='CategoryPage' component={CategoryPage}
   options={{
     tabBarIcon:({size,color})=>{
       return <MaterialIcons name={"reorder"} size={size} color={color} />
