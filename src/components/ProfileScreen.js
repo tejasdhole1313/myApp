@@ -12,6 +12,19 @@ const ProfileScreen = () => {
   const navigation = useNavigation(); 
   const auth = useSelector((state) => state.auth);
   const isLoggedIn = auth?.isLoggedIn;
+  
+  const handlePlaceOrder = () => {
+    navigation.navigate('OrderPage', {
+      name,
+      phone,
+      pincode,
+      city,
+      state,
+      address,
+      // location,
+      cashOnDelivery
+    });
+  };
 
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
@@ -42,12 +55,18 @@ const ProfileScreen = () => {
         </View>
 
         {/* Options List */}
-        <View style={styles.optionList}>
-          <Option icon="inventory" label="Orders" subtext="Check your order status" />
+      
+       <View style={styles.optionList}>
+          <TouchableOpacity  onPress={handlePlaceOrder}s>
+          <Option
+            icon="inventory"
+            label="Orders"
+            subtext="Check your order status"
+           
+          /></TouchableOpacity>
           <Option icon="support-agent" label="Help Center" subtext="Help regarding your recent purchases" />
           <Option icon="favorite-border" label="Wishlist" subtext="Your most loved styles" />
         </View>
-
         {/* Footer Links */}
         {/* <View style={styles.footerLinks}>
           {['FAQs', 'ABOUT US', 'TERMS OF USE', 'PRIVACY POLICY', 'GRIEVANCE REDRESSAL'].map((text) => (

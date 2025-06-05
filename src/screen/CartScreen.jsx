@@ -6,6 +6,7 @@ import CartCard from '../components/CartCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteFromCart } from '../redux/cartSlice';
 import { useNavigation } from '@react-navigation/native';
+import CheckoutScreen from './CheckoutScreen';
 
 const CartScreen = () => {
 const dispatch = useDispatch();
@@ -14,9 +15,9 @@ const totalprice = carts.reduce((sum, item) => sum + (item.price || 0), 0);
 const shipping = carts.length > 0 ? 5 : 0;
 const grandTotal = totalprice + shipping;
 const navigation = useNavigation();
- const handleCheckout = () => {
-  navigation.navigate("CheckoutScreen");
- };
+const handleCheckout = () => {
+  navigation.navigate('Home_Stack', { screen: 'CHECKOUT_SCREEN' });
+};
   return (
   <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
   <View style={styles.headercontainer}>

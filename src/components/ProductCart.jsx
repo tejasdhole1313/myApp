@@ -68,12 +68,16 @@ create ({
 fontSize:18,
 color:"#444444",
 fontWeight:"600",
+textAlign:"start",
+paddingLeft:5,
     },
     price:
     {
         fontSize:18,
         color:"#9C9C9C",
 fontWeight:"600",
+textAlign:"start",
+paddingLeft:5,
 
     },
     content : {

@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TextInput, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TextInput, FlatList, TouchableOpacity } from 'react-native';
 import Fontisto from "react-native-vector-icons/Fontisto";
 import LinearGradient from 'react-native-linear-gradient';
-
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Header from '../components/Header';
+import Voice from '@react-native-voice/voice'; 
 import Category from '../components/Category';
 import ProductCart from '../components/ProductCart';
 import data from '../data/data.json';
 
-const categories = ["Trending Now", "All", "New", "Mens", "Womens"];
+
+const categories = ["Trending Now", "All", "New", "Mens", "Ladies", "Kids"];
+
+type Product = {
+  id: number;
+  title: string;
+  image: string;
+  price: number;
+  gender: string;
+};
 
 const HomeScreen = () => {
-  const [products, setProducts] = useState(data.products);
-  const [filteredProducts, setFilteredProducts] = useState<typeof data.products>([]);
-  const [selectedCategory, setSelectedCategory] = useState("Mens");
+  const [products, setProducts] = useState<Product[]>(data.products);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
@@ -31,7 +41,7 @@ const HomeScreen = () => {
         result = [...products];
         break;
       case "New":
-        result = products.slice(10, 20);
+        result = products.slice(10, 30);
         break;
       case "Mens":
         result = products.filter(p => p.gender === "male");
@@ -48,31 +58,32 @@ const HomeScreen = () => {
         p.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-
     setFilteredProducts(result);
   };
-
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
       <Header isCart={false} />
-
       <FlatList
         numColumns={2}
         ListHeaderComponent={
           <>
             <Text style={styles.matchText}>Match Your Style</Text>
+         
 
-            <View style={styles.inputContainer}>
-              <View style={styles.iconContainer}>
-                <Fontisto name={'search'} size={20} color={"black"} />
-              </View>
-              <TextInput
-                style={styles.textInput}
-                placeholder='Search'
-                value={searchQuery}
-                onChangeText={text => setSearchQuery(text)}
-              />
-            </View>
+          <View style={styles.inputContainer}>
+  <View style={styles.iconContainer}>
+    <Fontisto name={'search'} size={20} color={"black"} />
+  </View>
+  <TextInput
+    style={styles.textInput}
+    placeholder='Search'
+    value={searchQuery}
+    onChangeText={text => setSearchQuery(text)}
+  />
+  <TouchableOpacity onPress={() => {}}>
+    <MaterialIcons name="keyboard-voice" size={24} color="#ccc" />
+  </TouchableOpacity>
+</View>
 
             <FlatList
               data={categories}

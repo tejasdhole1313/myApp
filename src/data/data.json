@@ -7,13 +7,13 @@
       "price": 1299,
       "gender": "male"
     },
-    {
-      "id": 2,
-      "title": "Men's Formal Trousers",
-      "image": "https://www.cubavera.com/cdn/shop/files/Classic-Textured-One-Pocket-Shirt-Cubavera-2_10f7b14e_180x.jpg?v=1746218097",
-      "price": 1499,
-      "gender": "male"
-    },
+   {
+  "id": 2,
+  "title": "Men's Formal Trousers",
+  "image": "../assets/product/p2.jpg",
+  "price": 1499,
+  "gender": "male"
+},
     {
       "id": 3,
       "title": "Men's Denim Jacket",

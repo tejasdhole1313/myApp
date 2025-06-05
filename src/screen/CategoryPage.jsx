@@ -13,12 +13,18 @@ const categories = [
   { title: 'Watch', icon: 'watch', iconSet: 'Entypo' },
   { title: 'Game Controller', icon: 'game-controller', iconSet: 'Entypo' },
   { title: 'Clothes', icon: 'shopping-bag', iconSet: 'Feather' },     
-  { title: 'Television', icon: 'tv', iconSet: 'Feather' },             
+  { title: 'Television',
+     icon: 'tv', iconSet: 'Feather' },             
   { title: 'Shoes', icon: 'shoe', iconSet: 'Entypo' },               
 ];
 
 const mobileBrands = [
-  "Apple", "Samsung", "Huawei", "Nokia",  "LG", "HTC", "Motorola", "Lenovo", "Xiaomi", "Google", "Honor", "Oppo", "Realme", "OnePlus", "Nothing", "vivo", "Meizu", "Asus", "Alcatel", "ZTE", "Microsoft", "Umidigi", "Coolpad", "Oscal", "Sharp", "Micromax", "Infinix", "Ulefone", "Tecno", "Doogee", "Blackview", "Cubot", "Oukitel", "Itel", "TCL"
+
+  "Apple", "Samsung", "Nokia",  "LG", "HTC", "Motorola", "Lenovo", "Xiaomi", "Google",  "Oppo", "Realme", "OnePlus", "Nothing", "vivo",    "ZTE",  "Oscal", "Sharp", "Micromax", "Infinix", "Ulefone", "Tecno", "Doogee", "Blackview", "Cubot", "Oukitel", "Itel", "TCL"
+];
+
+const laptopBrands = [
+  "Apple", "Dell", "HP", "Lenovo", "ASUS", "Acer", "MSI", "Samsung", "Razer", "Microsoft"
 ];
 
 const CategoryPage = () => {
@@ -68,7 +74,7 @@ const CategoryPage = () => {
               borderWidth: 1,
               borderColor: '#eee',
               elevation: 2,
-              fontWeight:"800",
+              fontWeight:"bold",
             }}
           >
             <Text style={{ color: "#333", fontSize: 13 }}>{brand}</Text>

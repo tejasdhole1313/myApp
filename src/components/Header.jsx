@@ -13,27 +13,28 @@ function Header({isCart}) {
 
 
   return (
-   <View style={styles.container}>
-    <TouchableOpacity  onPress={() => navigation.goBack()} style={styles.appIconContainer}>
-      {
-        isCart? (<Ionicons name={"chevron-back"} color={"#E96E6E"}  size={24}/>
-        ):(
-          <Image source={require("../assets/apps.png")} 
-      style={styles.appIcon}
-      />
-        )
+<View style={styles.container}>
+  <TouchableOpacity
+    onPress={() => {
+      if (isCart) {
+        navigation.goBack();
+      } else {
+        navigation.openDrawer(); 
       }
-      
-    </TouchableOpacity>
-    {
-      isCart && <Text  style={styles.myCart}>My Cart</Text>
-    }
-    <TouchableOpacity  onPress={handlePress}>
-    <Image source={require("../assets/profile.png")}
-    style={styles.dp}
-    />
-    </TouchableOpacity>
-   </View>
+    }}
+    style={styles.appIconContainer}
+  >
+    {isCart ? (
+      <Ionicons name={"chevron-back"} color={"#E96E6E"} size={24} />
+    ) : (
+      <Image source={require("../assets/apps.png")} style={styles.appIcon} />
+    )}
+  </TouchableOpacity>
+  {isCart && <Text style={styles.myCart}>My Cart</Text>}
+  <TouchableOpacity onPress={handlePress}>
+    <Image source={require("../assets/profile.png")} style={styles.dp} />
+  </TouchableOpacity>
+</View>
   )
 }
 
